@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0; /*-- Remove Space Around Edges Added by Browser --*/
+	font-family: 'Varela Round', sans-serif;
+	font-size: 17px;
+	line-height: 30px;
+	color: #28353E; /*-- Font Color --*/
+}
+
+/*-- Start Header, Logo & Navigation Styling --*/
+header {
+	background-color: #f1f1f1;
+}
+nav {
+	max-width: 1080px;
+	margin: 0 auto; /*-- Center Menu --*/ 
+}
+.logo img { /*-- Before logo class CSS so spacing is understood --*/
+	max-width: 220px;
+}
+.logo {
+	float: left;
+	color: #222;
+	padding: 12px 0 0 30px;
+}
+.toggle,
+[id^=drop] { /*-- Hide the Menu Label & Input */
+	display: none;
+}
+nav:after { /* https://www.w3schools.com/howto/howto_css_clearfix.asp
+	https://css-tricks.com/snippets/css/clear-fix/ */
+	content: "";
+	display: table;
+	clear: both;
+}
+nav ul {
+	float: right;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li a {
+	padding: 20px;
+	display: block;
+	color: #28353E; /*-- Matches Logo Text Color --*/
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: 600;
+}
+nav a.active,
+nav a:hover {
+	color: #000;
+	border-bottom: 3px solid #44A7D8; /*-- Matches Logo Icon Color --*/
+}
+
+/*-- Responsive Nav Menu Styling --*/
+@media (max-width: 825px) {
+	.logo {
+		width: 100%;
+		text-align: center; /*-- Link for Logo Allows Centering --*/
+		padding: 13px 0 8px 0; /*-- Reduce Top, Remove Left & Add Bottom Padding --*/
+		float: none; 
+		text-decoration: none;
+		color: #547990;/*-- Removes FL & Logo BG Color on mobile. --*/
+	}
+	nav ul {
+		float: left;
+		width: 100%;
+	}
+	nav ul li {
+		display: block;
+		width: 100%;
+	}
+	nav a {
+		padding: 14px 20px;
+		font-size: 17px;
+		transition: all .5s ease;
+	}
+	nav a.active,
+	nav a:hover {
+		border-bottom: 0;
+		background-color: #d3d3d3;
+	}
+	.toggle {
+		display: block;
+		background-color: #547990;
+		padding: 10px 20px;
+		color: #fff;
+		font-size: 17px;
+		cursor: pointer;
+		transition: all .3s ease;
+	}
+	.toggle:hover {
+		background-color: #65869b;
+	}
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+	.toggle:hover {
+		background-color: #65869b;
+	}
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+}
+.tech{
+	color: #65869b;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size:x-large;
+	padding-top: 50px;
+}
+/*-- Max Width Wrapper --*/
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/*-- CSS Image Slider --*/
+img {
+	max-width: 100%;
+}
+#slider figure {
+	position: relative; /*-- Necessary for slider to function --*/
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 30s slider infinite; /*-- Change seconds for slide speed --*/
+}
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+#slider { /*-- ID Required to add overflow to Figure element and keep IMGs from right scroll. --*/
+	overflow: hidden;
+}
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
+}
+
+/*-- Pages Banner Image --*/
+#banner {
+	min-height: 130px;
+	max-height: 130px;
+	overflow: hidden;
+	background-color: #28353E;
+}
+#banner img {
+	min-width: 100%;
+	opacity: .5;
+}
+
+/*-- Intro Section --*/
+.intro {
+	max-width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 45px 0 40px;
+}
+.border-container {
+	margin: 40px auto 30px;
+}
+.border {
+	background-color: #547990;
+	padding: 1px;
+	width: 60%;
+	margin: 0 auto;
+}
+
+/*-- Three Column Section --*/
+section {
+	width: 29%;
+	float: left;
+	margin: 2%;
+	text-align: center;
+}
+h2, p {
+	padding: 5px;
+}
+
+/*-- Two Column Section --*/
+.two-columns {
+	margin-top: 20px;
+}
+
+/*-- Two Column Section --*/
+article {
+	float: left;
+	width: 54%;
+	padding: 2%;
+	margin: 20px auto;
+}
+aside {
+	float: right;
+	width: 38%;
+	padding: 2%;
+	margin: 20px auto;
+}
+.btn-container {
+	padding: 15px;
+
+}
+.btn {
+	padding: 12px 18px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-size: 19px;
+	transition: all .5s ease;
+}
+.btn-dark {
+	background-color: #28353E;
+	color: #FFF;
+}
+.btn-dark:hover {
+	background-color: #485f6d;
+}
+.btn-light {
+	border: 2px solid #28353E;
+	color:#FFF;
+	background-color: #28353E;
+}
+.btn-light:hover {
+	border: 2px solid #485f6d;
+	background-color: #485f6d;
+	color: #FFF;
+}
+
+/*-- Contact Section --*/
+.contact a {
+	color: #000;
+	text-decoration: none;
+}
+.contact.social li a {
+   color: #333333;
+   font-size: 32px;
+   transition: all 0.3s ease;
+}
+.contact.social li a:hover {
+	color: #44A7D8;
+}
+
+/*-- Footer --*/
+footer {
+	width: 100%;
+	background: #333333;
+	overflow: hidden;
+	color: #fff;
+	padding: 20px 0;
+}
+footer a { /*-- For linkes on Mobile --*/
+	color: #fff;
+	text-decoration: none;
+}
+.footer-img {
+	padding-top: 20px;
+	max-width: 205px;
+}
+
+/*-- Social Icons --*/
+.social-center {
+	max-width: 223px;
+	margin: 0 auto;
+	padding-top: 16px;
+}
+ul.social {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul.social li {
+	display: inline;
+	padding: 8px;
+}
+ul.social li a {
+   color: #fff;
+   font-size: 32px;
+   transition: all 0.3s ease;
+}
+ul.social li a:hover {
+	color: #d1d1d1;
+}
+.last-img {
+	max-height: 200px;
+	margin: 10px auto;
+}
+
+/*-- Socket --*/
+footer.socket {
+	background-color: #222;
+	border-top: 1px solid #4D4E50;
+	text-align: center;
+}
+
+/*-- Three Column Sections Styling --*/
+@media (max-width: 768px) {
+	section {
+		float: left;
+		width: 100%;
+		margin: 25px auto;
+		padding: 0;
+	}
+	footer {
+		padding: 0;
+	}
+}
+
+/*-- Two Column Sections Styling --*/
+@media (max-width: 825px) {
+	article {
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	aside {
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+}
